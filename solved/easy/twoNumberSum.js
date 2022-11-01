@@ -32,19 +32,32 @@ const twoNumberSum = (arr, target) => {
 };
 
 //IF MUTATION ISN'T ALLOWED
-//DOUBLE FOR LOOP THROUGH ARRAY LOOKING FOR SUM === TARGET
+//STORE EACH VALUE IN DICTIONARY
+// const twoNumberSum = (arr, target) => {
+//   const history = {};
+//   for (let i = 0; i < arr.length; i++) {
+//     const value = target - arr[i];
+//     if (!history[arr[i]]) {
+//       history[arr[i]] = i;
+//     }
+//     if (history[value] !== undefined && i !== history[value]) {
+//       return [arr[i], value];
+//     }
+//   }
+//   return [];
+// };
 
-const twoNumberSumClean = (arr, target) => {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      const sum = arr[i] + arr[j];
-      if (sum === target) {
-        return [arr[i], arr[j]];
-      }
-    }
-  }
-  return [];
-};
+//DOUBLE FOR LOOP THROUGH ARRAY LOOKING FOR SUM === TARGET
+// const twoNumberSum = (arr, target) => {
+//   for (let i = 0; i < arr.length; i++) {
+//     for (let j = i + 1; j < arr.length; j++) {
+//       const sum = arr[i] + arr[j];
+//       if (sum === target) {
+//         return [arr[i], arr[j]];
+//       }
+//     }
+//   }
+//   return [];
+// };
 
 // console.log(twoNumberSum(sampleArray, sampleTarget));
-// console.log(twoNumberSumClean(sampleArray, sampleTarget));
