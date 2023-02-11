@@ -12,23 +12,21 @@ const romanToInt = (inputString: string): number => {
     D: 500,
     M: 1000,
   };
+
   let total = 0;
-  // let skip = false;
+
   for (let i = 0; i < inputString.length; i++) {
     const romanNumber = inputString[i];
     const nextRomanNumber = inputString[i + 1];
-    // if (skip) {
-    //   skip = false;
-    //   continue;
-    // }
+
     if (romanLookUp[romanNumber] < romanLookUp[nextRomanNumber]) {
-      // skip = true;
       total += romanLookUp[nextRomanNumber] - romanLookUp[romanNumber];
       i++;
     } else {
       total += romanLookUp[romanNumber];
     }
   }
+
   return total;
 };
 
