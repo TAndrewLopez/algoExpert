@@ -1,9 +1,9 @@
-import { RomanLookUp } from "./types";
+import { LookUp } from "../types/types";
 
 // ? Given a roman numeral, covert it to an integer
 
 const romanToInt = (inputString: string): number => {
-  const romanLookUp: RomanLookUp = {
+  const romanLookUp: LookUp = {
     I: 1,
     V: 5,
     X: 10,
