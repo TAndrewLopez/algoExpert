@@ -3,7 +3,7 @@
 
 // ! FOLLOWED HINTS
 
-const nonConstructibleChange = (coins) => {
+const nonConstructibleChange = (coins: number[]): number => {
   coins.sort((a, b) => a - b);
   let minChange = 0;
 

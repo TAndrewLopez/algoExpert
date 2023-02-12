@@ -1,6 +1,3 @@
-const inputArray = [5, 2, [7, -1], 3, [6, [-13, 8], 4]];
-// output is 12
-
 // LOOP THROUGH ARRAY
 // IF INDEX A AND INDEX B ARE NUMBER => SUM
 // IF INDEX IS ARRAY => SUM ARRAY AND MULTIPLY BY DEPTH
@@ -25,4 +22,4 @@ const productSum = (arr, depth = 1) => {
   //the sum of an array is the depth * sum
   return sum * depth;
 };
-console.log(productSum(inputArray));
+console.log(productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])); // 12

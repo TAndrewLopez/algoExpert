@@ -1,13 +1,18 @@
+import { LookUp } from "../../types/types";
+
 // ? Round Robin - Each team faces all other teams, only two teams compete at a time
 // ? One team is designated the home team / 1 winner & 1 loser & no ties
 // ? 3 points for the winner - 0 for the loser
 
 // ! Given an array of pairs representing the teams that have competed against each other, and an array containing the results of each competition, write a function that returns the winner of the tournament.
 
-const tournamentWinner = (competitions, results) => {
-  const teamsObj = {};
+const tournamentWinner = (
+  competitions: string[][],
+  results: number[]
+): string => {
+  const teamsObj: LookUp = {};
   let tourneyWinner;
-  let winnerScore;
+  let winnerScore: number = -1;
 
   // * LOOP THROUGH COMPETITIONS
   for (let i = 0; i < competitions.length; i++) {
@@ -42,20 +47,13 @@ const tournamentWinner = (competitions, results) => {
   return tourneyWinner || "Something went wrong. =)";
 };
 
-const COMPETITIONS = [
-  ["HTML", "C#"],
-  ["C#", "Python"],
-  ["Python", "HTML"],
-];
-const RESULTS = [0, 0, 1];
-
-console.log(tournamentWinner(COMPETITIONS, RESULTS)); // 'Python'
-
-/*
-* HTML VS C# - AWAY TEAM WINS
-* { teamName: score }
-* { HTML : 0,
-*    C# 1 
-*}
-
-*/
+console.log(
+  tournamentWinner(
+    [
+      ["HTML", "C#"],
+      ["C#", "Python"],
+      ["Python", "HTML"],
+    ],
+    [0, 0, 1]
+  )
+); // 'Python'
