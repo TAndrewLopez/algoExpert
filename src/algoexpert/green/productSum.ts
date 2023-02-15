@@ -4,7 +4,9 @@
 // HOW DO I KNOW MY DEPTH???
 // ADD THAT SUM TO ORIGINAL COUNT
 
-const productSum = (arr, depth = 1) => {
+// ! ARR TYPE IS ANY BECAUSE OF UNKNOWN NESTED VALUES
+
+const productSum = (arr: any, depth = 1) => {
   let sum = 0;
   //loop through array
   for (let i = 0; i < arr.length; i++) {
@@ -22,4 +24,5 @@ const productSum = (arr, depth = 1) => {
   //the sum of an array is the depth * sum
   return sum * depth;
 };
+
 console.log(productSum([5, 2, [7, -1], 3, [6, [-13, 8], 4]])); // 12
