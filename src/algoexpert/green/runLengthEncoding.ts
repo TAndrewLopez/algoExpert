@@ -1,4 +1,4 @@
-
+// ! USED HINTS
 const runLengthEncoding = (string: string): string => {
     const stack = []
 
@@ -8,7 +8,7 @@ const runLengthEncoding = (string: string): string => {
             continue
         }
 
-        const top = stack[stack.length - 1]
+        const top: { char: string, count: number } = stack[stack.length - 1]
 
         if (char === top.char && top.count < 9) {
             top.count++
