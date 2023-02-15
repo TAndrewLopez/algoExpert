@@ -1,6 +1,5 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const romanToInt = (inputString) => {
+const romanToInt = (roman) => {
     const romanLookUp = {
         I: 1,
         V: 5,
@@ -11,9 +10,9 @@ const romanToInt = (inputString) => {
         M: 1000,
     };
     let total = 0;
-    for (let i = 0; i < inputString.length; i++) {
-        const romanNumber = inputString[i];
-        const nextRomanNumber = inputString[i + 1];
+    for (let i = 0; i < roman.length; i++) {
+        const romanNumber = roman[i];
+        const nextRomanNumber = roman[i + 1];
         if (romanLookUp[romanNumber] < romanLookUp[nextRomanNumber]) {
             total += romanLookUp[nextRomanNumber] - romanLookUp[romanNumber];
             i++;
