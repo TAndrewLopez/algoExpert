@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const semordnilap = (words) => {
     const lookUp = {};
     const returnArray = [];

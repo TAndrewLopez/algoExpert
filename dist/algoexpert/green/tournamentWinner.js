@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const tournamentWinner = (competitions, results) => {
     const teamsObj = {};
     let tourneyWinner;

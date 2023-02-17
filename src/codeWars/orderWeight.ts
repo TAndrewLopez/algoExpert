@@ -12,9 +12,9 @@
 // ! ex: "56 65 74 100 99 68 86 180 90"  => "100 180 90 56 65 74 68 86 99"
 // ! ex:  11 11 11 1   18 14 14 9 9
 
-const orderWeight = (inputString) => {
+const orderWeight = (inputString: string) => {
   // MAP THROUGH STRING ARRAY AND CREATE OBJECTS WITH OLD AND NEW VALUES
-  const stringArray = inputString.split(" ").map((string) => {
+  const stringArray: Array<{ oldValue: string, newValue: string }> = inputString.split(" ").map((string) => {
     const numbersArray = string.split("");
     let newNumberValue = 0;
 
@@ -28,7 +28,12 @@ const orderWeight = (inputString) => {
   });
 
   //SORT BASED ON NEW VALUES
-  stringArray.sort((a, b) => a.newValue < b.newValue);
+  stringArray.sort((a, b) => {
+    if (a.newValue < b.newValue) {
+      return 1
+    }
+    return 0
+  });
 
   // REDUCE STRING ARRAY BACK TO STRING BEFORE RETURNING
 

@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const generateDocument = (characters, document) => {
     const dictionary = {};
     for (const character of characters) {

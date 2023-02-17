@@ -1,5 +1,3 @@
-import { LookUp } from "../../types/types";
-
 // ? Round Robin - Each team faces all other teams, only two teams compete at a time
 // ? One team is designated the home team / 1 winner & 1 loser & no ties
 // ? 3 points for the winner - 0 for the loser
@@ -10,7 +8,7 @@ const tournamentWinner = (
   competitions: string[][],
   results: number[]
 ): string => {
-  const teamsObj: LookUp = {};
+  const teamsObj: { [key: string]: number } = {};
   let tourneyWinner;
   let winnerScore: number = -1;
 

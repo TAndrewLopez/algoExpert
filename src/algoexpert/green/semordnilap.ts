@@ -1,5 +1,3 @@
-import { LookUp } from './../../types/types';
-
 const semordnilap = (words: Array<string>): Array<Array<string>> => {
     const lookUp: { [key: string]: string } = {}
     const returnArray = []

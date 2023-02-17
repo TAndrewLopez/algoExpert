@@ -2,10 +2,8 @@
 // ? Modify array in place and do not duplicate
 // ? O(1) extra memory
 
-import { LookUp } from "../types/types";
-
 const removeDuplicates = (numbers: number[]): number => {
-  const dictionary: LookUp = {};
+  const dictionary: { [key: string]: number } = {};
 
   for (let i = 0; i < numbers.length; i++) {
     if (!dictionary[numbers[i]]) {
@@ -28,6 +26,8 @@ console.log(removeDuplicates([1, 1, 2])); // 2
 console.log(removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])); // 5
 
 /*
+
+* SOLUTION CODE
 
 function removeDuplicates(nums: number[]): number {
     if(nums.length === 1) return 1

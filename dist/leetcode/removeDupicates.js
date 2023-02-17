@@ -1,5 +1,4 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 const removeDuplicates = (numbers) => {
     const dictionary = {};
     for (let i = 0; i < numbers.length; i++) {

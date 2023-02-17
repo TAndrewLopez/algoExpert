@@ -1,7 +1,7 @@
-import { LookUp } from "../../types/types";
+
 
 const generateDocument = (characters: string, document: string): boolean => {
-  const dictionary: LookUp = {};
+  const dictionary: { [key: string]: number } = {};
 
   for (const character of characters) {
     if (!dictionary[character]) {
