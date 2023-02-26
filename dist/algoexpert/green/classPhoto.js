@@ -1,18 +1,23 @@
 "use strict";
 const classPhotos = (redShirtHeights, blueShirtHeights) => {
-    redShirtHeights.sort((a, b) => a - b);
-    blueShirtHeights.sort((a, b) => a - b);
-    let validRedInBack = true;
-    let validBlueInBack = true;
-    let i = 0;
-    while (i < redShirtHeights.length && (validBlueInBack || validRedInBack)) {
-        if (!validRedInBack && !validBlueInBack)
-            break;
-        if (redShirtHeights[i] <= blueShirtHeights[i])
-            validRedInBack = false;
-        if (redShirtHeights[i] >= blueShirtHeights[i])
-            validBlueInBack = false;
-        i++;
+    redShirtHeights.sort((a, b) => b - a);
+    blueShirtHeights.sort((a, b) => b - a);
+    let frontRow, backRow;
+    const redTallest = redShirtHeights[0];
+    const blueTallest = blueShirtHeights[0];
+    if (redTallest > blueTallest) {
+        backRow = redShirtHeights;
+        frontRow = blueShirtHeights;
     }
-    return validRedInBack || validBlueInBack;
+    else {
+        backRow = blueShirtHeights;
+        frontRow = redShirtHeights;
+    }
+    for (let i = 0; i < backRow.length; i++) {
+        if (backRow[i] <= frontRow[i])
+            return false;
+    }
+    return true;
 };
+console.log(classPhotos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5]));
+console.log(classPhotos([6, 9, 2, 4, 5, 1], [5, 8, 1, 3, 4, 9]));

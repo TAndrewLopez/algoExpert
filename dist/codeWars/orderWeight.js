@@ -11,7 +11,12 @@ const orderWeight = (inputString) => {
             newValue: String(newNumberValue),
         };
     });
-    stringArray.sort((a, b) => a.newValue < b.newValue);
+    stringArray.sort((a, b) => {
+        if (a.newValue < b.newValue) {
+            return 1;
+        }
+        return 0;
+    });
     return stringArray;
 };
 const firstString = "103 123 4444 99 2000";

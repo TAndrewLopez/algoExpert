@@ -3,34 +3,35 @@
 // * ALL STUDENTS WEARING BLUE SHIRTS MUST BE IN THE SAME ROW
 // * EACH STUDENT IN THE BACK ROW MUST BE STRICTLY TALLER THAN THE STUDENT DIRECTLY IN FRONT OF THEM
 
-// ! USED HINTS
 
 const classPhotos = (
   redShirtHeights: number[],
   blueShirtHeights: number[]
 ): Boolean => {
-  // SORT BOTH ARRAYS OF HEIGHT
-  redShirtHeights.sort((a, b) => a - b);
-  blueShirtHeights.sort((a, b) => a - b);
+  redShirtHeights.sort((a, b) => b - a);
+  blueShirtHeights.sort((a, b) => b - a);
+  let frontRow, backRow;
 
-  let validRedInBack = true;
-  let validBlueInBack = true;
-  let i = 0;
+  const redTallest = redShirtHeights[0]
+  const blueTallest = blueShirtHeights[0]
 
-  //ASSIGN BACK ROW BASED WITH FIRST TALLER STUDENT
-  //   for (let i = 0; i < redShirtHeights.length; i++) {
-  while (i < redShirtHeights.length && (validBlueInBack || validRedInBack)) {
-    if (!validRedInBack && !validBlueInBack) break;
-    if (redShirtHeights[i] <= blueShirtHeights[i]) validRedInBack = false;
-    if (redShirtHeights[i] >= blueShirtHeights[i]) validBlueInBack = false;
-    i++;
+  if (redTallest > blueTallest) {
+    backRow = redShirtHeights
+    frontRow = blueShirtHeights
+  } else {
+    backRow = blueShirtHeights
+    frontRow = redShirtHeights
   }
 
-  return validRedInBack || validBlueInBack;
+  for (let i = 0; i < backRow.length; i++) {
+    if (backRow[i] <= frontRow[i]) return false
+  }
+
+  return true
 };
 
 // bsh = [ 2, 4, 5, 6, 9]
 // rsh = [ 1, 3, 4, 5, 8]
 
-// console.log(classPhotos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5])); // true
-// console.log(classPhotos([6, 9, 2, 4, 5, 1], [5, 8, 1, 3, 4, 9])); // false
+console.log(classPhotos([5, 8, 1, 3, 4], [6, 9, 2, 4, 5])); // true
+console.log(classPhotos([6, 9, 2, 4, 5, 1], [5, 8, 1, 3, 4, 9])); // false
