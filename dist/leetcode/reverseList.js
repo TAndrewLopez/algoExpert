@@ -12,4 +12,4 @@ const reverseList = (head) => {
     }
     return prev;
 };
-console.log(reverseList((0, helper_1.createLinkedList)([1, 2])));
+console.log(reverseList((0, helper_1.createSinglyLinkedList)([1, 2])));

@@ -1,6 +1,6 @@
-import { ListNode, createLinkedList } from "../../helper"
+import { ListNode, createSinglyLinkedList } from "../../helper"
 
-const testLinkedList = createLinkedList([1, 1, 3, 4, 4, 4, 5, 6, 6])
+const testLinkedList = createSinglyLinkedList([1, 1, 3, 4, 4, 4, 5, 6, 6])
 
 const removeDuplicatesFromLinkedList = (head: ListNode | null): ListNode | null => {
     // CHECK TO SEE IF CURRENT NODE IS THE SAME AS THE NEXT NODE

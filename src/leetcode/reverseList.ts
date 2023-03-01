@@ -1,4 +1,4 @@
-import { ListNode, createLinkedList } from "../helper"
+import { ListNode, createSinglyLinkedList } from "../helper"
 
 // ! HINTED
 
@@ -15,4 +15,4 @@ const reverseList = (head: ListNode | null): ListNode | null => {
     return prev
 }
 
-console.log(reverseList(createLinkedList([1, 2])))
+console.log(reverseList(createSinglyLinkedList([1, 2])))

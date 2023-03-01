@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const helper_1 = require("../../helper");
-const testLinkedList = (0, helper_1.createLinkedList)([1, 1, 3, 4, 4, 4, 5, 6, 6]);
+const testLinkedList = (0, helper_1.createSinglyLinkedList)([1, 1, 3, 4, 4, 4, 5, 6, 6]);
 const removeDuplicatesFromLinkedList = (head) => {
     var _a;
     const startHead = head;
