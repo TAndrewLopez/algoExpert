@@ -20,9 +20,9 @@ export class BinaryTree {
     value: number
     left: BinaryTree | null
     right: BinaryTree | null
-    constructor(value: number) {
-        this.value = value
-        this.left = null;
-        this.right = null;
+    constructor(value?: number, left?: BinaryTree | null, right?: BinaryTree | null) {
+        this.value = (value === undefined ? 0 : value)
+        this.left = (left === undefined ? null : left);
+        this.right = (right === undefined ? null : right);;
     }
 }
